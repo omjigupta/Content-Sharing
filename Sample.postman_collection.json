@@ -1,0 +1,967 @@
+{
+	"info": {
+		"name": "Sample",
+		"_postman_id": "9997bc21-2ecc-6c30-c80d-f096de115e1b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:9000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Gets all Users"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" :\"test-2\",\n\t\"address\" :\"test address-2\",\n\t\"age\" : 77\n}"
+				},
+				"url": {
+					"raw": "localhost:9000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Creates user for the given parameters"
+			},
+			"response": [
+				{
+					"id": "dab3263b-904e-4f1c-bae9-15085fe30a00",
+					"name": "Missing Name Parameter",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\" :\"test address\",\n\t\"age\" : 99\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "95",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:42:47 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 2983,
+					"body": "{\"data\":null,\"internalStatus\":1,\"success\":false,\"message\":\"{Field:name,Error:error.required }\"}"
+				},
+				{
+					"id": "b414755b-9d06-4e46-b90f-66ba9e1b5d78",
+					"name": "Missing Address Parameter",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" :\"test\",\n\t\"age\" : 99\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "98",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:43:24 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 23,
+					"body": "{\"data\":null,\"internalStatus\":1,\"success\":false,\"message\":\"{Field:address,Error:error.required }\"}"
+				},
+				{
+					"id": "f5eedb7d-9a34-4b22-8c45-2634ea9a6446",
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" :\"test-2\",\n\t\"address\" :\"test address-2\",\n\t\"age\" : 77\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "124",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:46:42 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 2223,
+					"body": "{\"data\":\"successfully created user with ID: 5a0d264258728ebf0a379ed7\",\"internalStatus\":0,\"success\":true,\"message\":\"success\"}"
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:9000/users/5a0d264258728ebf0a379ed7",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"5a0d264258728ebf0a379ed7"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "bba77754-d17a-4fa6-a9ec-b9cef8116380",
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"5a0d264258728ebf0a379ed7\",\n\t\"name\" :\"test-2\",\n\t\"address\" :\"test address-2 updated\",\n\t\"age\" : 77\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed7",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "90",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:47:32 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 86,
+					"body": "{\"data\":\"successfully updated user\",\"internalStatus\":0,\"success\":true,\"message\":\"success\"}"
+				}
+			]
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:9000/users/5a0d264258728ebf0a379ed7",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"5a0d264258728ebf0a379ed7"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "e5eb4f5e-ad19-464d-95cb-c449a5db78b1",
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed7",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "330",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:48:57 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 65,
+					"body": "{\"data\":{\"user\":{\"id\":{\"timestamp\":1510811202,\"machineIdentifier\":5796494,\"processIdentifier\":-16630,\"counter\":3645143,\"time\":1510811202000,\"date\":1510811202000,\"timeSecond\":1510811202},\"updatedAt\":0,\"createdAt\":0,\"name\":\"test-2\",\"address\":\"test address-2 updated\",\"age\":77}},\"internalStatus\":0,\"success\":true,\"message\":\"success\"}"
+				},
+				{
+					"id": "9c11c57d-8511-4175-ab2d-3d24d52f6df6",
+					"name": "Invalid User Type",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "69",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:49:21 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 21,
+					"body": "{\"internalStatus\":1,\"success\":false,\"message\":\"Invalid User ID type\"}"
+				},
+				{
+					"id": "f4a877b8-e145-4a75-97a7-a78b029b6884",
+					"name": "Invalid User ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed9",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "64",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:50:22 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 2169,
+					"body": "{\"internalStatus\":1,\"success\":false,\"message\":\"Invalid User ID\"}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:9000/users/5a0d264258728ebf0a379ed9",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"5a0d264258728ebf0a379ed9"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "98d2b756-cce2-407d-862a-5d36909e8b25",
+					"name": "Invalid User ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed9",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "81",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:53:18 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 17,
+					"body": "{\"internalStatus\":1,\"success\":false,\"message\":\"No user exists for given user ID\"}"
+				},
+				{
+					"id": "07e79417-fd2d-43ba-b47c-cbf82d975cbb",
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:9000/users/5a0d264258728ebf0a379ed7",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users",
+								"5a0d264258728ebf0a379ed7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "90",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'",
+							"name": "Content-Security-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Nov 2017 05:53:50 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin",
+							"name": "Referrer-Policy",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-ExampleFilter",
+							"value": "foo",
+							"name": "X-ExampleFilter",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "master-only",
+							"name": "X-Permitted-Cross-Domain-Policies",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 18,
+					"body": "{\"data\":\"successfully deleted user\",\"internalStatus\":0,\"success\":true,\"message\":\"success\"}"
+				}
+			]
+		}
+	]
+}

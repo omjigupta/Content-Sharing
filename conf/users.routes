@@ -1,0 +1,8 @@
+
+GET     /                      user.UserController.getAllUsers()
+POST    /                      user.UserController.createUser()
+POST    /login                 user.UserController.loginUser()
+POST    /logout                user.UserController.logoutUser(userId : String)
+GET     /:userId              user.UserController.getUser(userId : String)
+PUT     /:userId              user.UserController.updateUser(userId : String)
+DELETE  /:userId              user.UserController.deleteUser(userId : String)

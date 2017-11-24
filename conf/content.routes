@@ -1,0 +1,7 @@
+
+GET     /                      content.ContentController.getAllContent()
+POST    /                      content.ContentController.createContent()
+PUT     /:contentId              content.ContentController.updateContent(contentId : String)
+GET     /:contentId               content.ContentController.getContent(contentId : String)
+GET     /:userId               content.ContentController.getContentByUser(userId : String)
+DELETE  /:contentId              content.ContentController.deleteContent(contentId : String)

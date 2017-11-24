@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+GET     /about      controllers.Default.redirect(to = "https://www.platform3solutions.com/")
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /                           global.common.BaseController.index()
+->      /users                      users.Routes
+->      /content                    content.Routes
+
+
+
