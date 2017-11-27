@@ -16,6 +16,4 @@ public class SessionModel extends BaseModel {
 
     public enum Fields {authToken, userID}
 
-    //	long epoch = System.currentTimeMillis()/1000;
-
 }

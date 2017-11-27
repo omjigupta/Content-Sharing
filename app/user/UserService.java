@@ -63,6 +63,7 @@ public class UserService {
 
     public Optional<UserModel> loginUser(UserRequestForm mForm){
       final UserModel user = repository.getUserByEmail(mForm.getEmail());
+
       boolean done = compare(mForm.getPassword(),user.getPassword());
 
       if(done)

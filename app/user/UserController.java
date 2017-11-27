@@ -3,6 +3,7 @@ package user;
 import com.google.common.collect.ImmutableMap;
 import global.common.BaseController;
 import global.exceptions.CustomException;
+import global.utils.JwtUtility;
 import org.bson.types.ObjectId;
 import play.data.Form;
 import play.mvc.BodyParser;
@@ -11,6 +12,8 @@ import session.SessionService;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Singleton
@@ -56,7 +59,11 @@ public final class UserController extends BaseController {
             String session = sessionService.generateSession();
             boolean status = sessionService.assignSessionToUser(userModel.getId(), session);
 
-            return status ? success("successfully login", ImmutableMap.of("x-session-token",session)) : failure("failed to login");
+            Map<String, Object> claim = new HashMap<String,Object>();
+            claim.put(session, userModel.getId());
+            String jwtToken = JwtUtility.createJWT(session, userModel.getEmailAddress(),"Archon",claim);
+
+            return status ? success("successfully login", ImmutableMap.of("x-session-token",jwtToken)) : failure("failed to login");
         }else{
             return failure("Invalid Login credentials");
         }
@@ -64,6 +71,7 @@ public final class UserController extends BaseController {
     }
 
     public Result logoutUser(String sessionToken) {
+
         boolean sModel = this.sessionService.deleteSession(sessionToken);
         return  sModel ? success("You've been successfully logged out") : failure("not logout");
     }

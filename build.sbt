@@ -14,11 +14,12 @@ libraryDependencies ++= Seq(
 javaWs
 )
 
+
 libraryDependencies += guice
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0"
 libraryDependencies += "org.mongodb.morphia" % "morphia" % "1.3.2"
 libraryDependencies += "org.projectlombok" % "lombok" % "1.16.18" % "provided"
-
+libraryDependencies += "io.jsonwebtoken" % "jjwt" % "0.9.0"
 // Test Database
 libraryDependencies += "com.h2database" % "h2" % "1.4.194"
 

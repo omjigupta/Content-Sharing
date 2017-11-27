@@ -25,7 +25,6 @@ public class MemberContentRepositoryImpl extends BaseRepository<MemberContentMod
 
     @Override
     public MemberContentModel getMemberContentByContentId(ObjectId contentId) {
-
         return query()
                 .field(BaseModel.Fields.id.name())
                 .equal(contentId)

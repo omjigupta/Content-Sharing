@@ -1,0 +1,90 @@
+2017-11-27 18:06:01,649 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Configuration not found for database: No configuration setting found for key 'db'
+2017-11-27 18:06:02,837 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
+2017-11-27 18:06:03,032 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-7 - Initialising Mongo DB Connection with following parameters.
+ Database Name: test 
+ Host: localhost 
+ Port: 27017 
+ URI: 
+
+2017-11-27 18:06:03,043 [INFO] from org.mongodb.morphia.logging.MorphiaLoggerFactory in play-dev-mode-akka.actor.default-dispatcher-7 - LoggerImplFactory set to org.mongodb.morphia.logging.jdk.JDKLoggerFactory
+2017-11-27 18:06:03,172 [INFO] from org.mongodb.driver.cluster in play-dev-mode-akka.actor.default-dispatcher-7 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 18:06:03,240 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-7 - Successfully initialised Mongo DB
+2017-11-27 18:06:03,277 [INFO] from org.mongodb.driver.connection in cluster-ClusterId{value='5a1c06b3e62f9d324b8fd83d', description='null'}-localhost:27017 - Opened connection [connectionId{localValue:1, serverValue:29}] to localhost:27017
+2017-11-27 18:06:03,279 [INFO] from org.mongodb.driver.cluster in cluster-ClusterId{value='5a1c06b3e62f9d324b8fd83d', description='null'}-localhost:27017 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, roundTripTimeNanos=561224}
+2017-11-27 18:06:03,850 [INFO] from org.hibernate.validator.internal.util.Version in play-dev-mode-akka.actor.default-dispatcher-7 - HV000001: Hibernate Validator 5.4.1.Final
+2017-11-27 18:06:03,886 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-7 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-11-27 18:06:03,990 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2017-11-27 18:06:03,993 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
+2017-11-27 18:06:04,647 [INFO] from org.mongodb.driver.connection in application-akka.actor.default-dispatcher-6 - Opened connection [connectionId{localValue:2, serverValue:30}] to localhost:27017
+2017-11-27 18:13:25,617 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Configuration not found for database: No configuration setting found for key 'db'
+2017-11-27 18:13:25,745 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
+2017-11-27 18:13:25,751 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-8 - Initialising Mongo DB Connection with following parameters.
+ Database Name: test 
+ Host: localhost 
+ Port: 27017 
+ URI: 
+
+2017-11-27 18:13:25,752 [INFO] from org.mongodb.driver.cluster in play-dev-mode-akka.actor.default-dispatcher-8 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 18:13:25,755 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-8 - Successfully initialised Mongo DB
+2017-11-27 18:13:25,757 [INFO] from org.mongodb.driver.connection in cluster-ClusterId{value='5a1c086de62f9d324b8fd83f', description='null'}-localhost:27017 - Opened connection [connectionId{localValue:3, serverValue:31}] to localhost:27017
+2017-11-27 18:13:25,757 [INFO] from org.mongodb.driver.cluster in cluster-ClusterId{value='5a1c086de62f9d324b8fd83f', description='null'}-localhost:27017 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, roundTripTimeNanos=259566}
+2017-11-27 18:13:25,889 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-11-27 18:13:25,902 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2017-11-27 18:13:25,903 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2017-11-27 18:13:25,940 [INFO] from org.mongodb.driver.connection in application-akka.actor.default-dispatcher-3 - Opened connection [connectionId{localValue:4, serverValue:32}] to localhost:27017
+2017-11-27 18:16:20,393 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-10 - Configuration not found for database: No configuration setting found for key 'db'
+2017-11-27 18:16:20,504 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
+2017-11-27 18:16:20,513 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-10 - Initialising Mongo DB Connection with following parameters.
+ Database Name: test 
+ Host: localhost 
+ Port: 27017 
+ URI: 
+
+2017-11-27 18:16:20,515 [INFO] from org.mongodb.driver.cluster in play-dev-mode-akka.actor.default-dispatcher-10 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 18:16:20,519 [INFO] from org.mongodb.driver.connection in cluster-ClusterId{value='5a1c091ce62f9d324b8fd841', description='null'}-localhost:27017 - Opened connection [connectionId{localValue:5, serverValue:33}] to localhost:27017
+2017-11-27 18:16:20,519 [INFO] from org.mongodb.driver.cluster in cluster-ClusterId{value='5a1c091ce62f9d324b8fd841', description='null'}-localhost:27017 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, roundTripTimeNanos=286233}
+2017-11-27 18:16:20,519 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-10 - Successfully initialised Mongo DB
+2017-11-27 18:16:20,603 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-11-27 18:16:20,613 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2017-11-27 18:16:20,614 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2017-11-27 18:16:20,642 [INFO] from org.mongodb.driver.connection in application-akka.actor.default-dispatcher-2 - Opened connection [connectionId{localValue:6, serverValue:34}] to localhost:27017
+2017-11-27 18:18:27,181 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-20 - Configuration not found for database: No configuration setting found for key 'db'
+2017-11-27 18:18:27,301 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-5 - Slf4jLogger started
+2017-11-27 18:18:27,308 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-20 - Initialising Mongo DB Connection with following parameters.
+ Database Name: test 
+ Host: localhost 
+ Port: 27017 
+ URI: 
+
+2017-11-27 18:18:27,309 [INFO] from org.mongodb.driver.cluster in play-dev-mode-akka.actor.default-dispatcher-20 - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-11-27 18:18:27,318 [INFO] from global.configuration.db.mongodb.MongoDBConnection in play-dev-mode-akka.actor.default-dispatcher-20 - Successfully initialised Mongo DB
+2017-11-27 18:18:27,319 [INFO] from org.mongodb.driver.connection in cluster-ClusterId{value='5a1c099be62f9d324b8fd843', description='null'}-localhost:27017 - Opened connection [connectionId{localValue:7, serverValue:35}] to localhost:27017
+2017-11-27 18:18:27,320 [INFO] from org.mongodb.driver.cluster in cluster-ClusterId{value='5a1c099be62f9d324b8fd843', description='null'}-localhost:27017 - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, roundTripTimeNanos=182924}
+2017-11-27 18:18:27,398 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-20 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-11-27 18:18:27,408 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2017-11-27 18:18:27,408 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev)
+2017-11-27 18:19:42,147 [INFO] from org.mongodb.driver.connection in application-akka.actor.default-dispatcher-3 - Opened connection [connectionId{localValue:8, serverValue:36}] to localhost:27017
