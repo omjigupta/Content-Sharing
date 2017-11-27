@@ -41,7 +41,7 @@ public class UserService {
     public UserModel createUser(UserRequestForm userForm) {
         final UserModel newUser = new UserModel();
         newUser.setPassword(hash(userForm.getPassword()));
-        newUser.setName(userForm.getName());
+        newUser.setEmailAddress(userForm.getEmail());
         return repository.createUser(newUser);
     }
 
@@ -53,7 +53,7 @@ public class UserService {
             throw new CustomException("No user exists for given user ID");
         }
 
-        user.setName(userForm.getName());
+        user.setEmailAddress(userForm.getEmail());
         user.setPassword(hash(userForm.getPassword()));
 
         repository.updateUser(user);
@@ -62,7 +62,7 @@ public class UserService {
     }
 
     public Optional<UserModel> loginUser(UserRequestForm mForm){
-      final UserModel user = repository.getUserByName(mForm.getName());
+      final UserModel user = repository.getUserByEmail(mForm.getEmail());
       boolean done = compare(mForm.getPassword(),user.getPassword());
 
       if(done)

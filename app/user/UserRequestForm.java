@@ -13,7 +13,7 @@ public class UserRequestForm {
     @Constraints.MaxLength(256)
     @Constraints.Required
     @Constraints.Email
-    public String name;     //name is email
+    public String email;     //email is email
 
     @Constraints.MinLength(4)
     @Constraints.MaxLength(256)

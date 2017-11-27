@@ -19,9 +19,9 @@ public class UserRepositoryImpl extends BaseRepository<UserModel> implements Use
 
 
     @Override
-    public UserModel getUserByName(final String name) {
+    public UserModel getUserByEmail(final String name) {
         return query()
-                .field(UserModel.Fields.name.name())
+                .field(UserModel.Fields.emailAddress.name())
                 .equal(name)
                 .get();
     }

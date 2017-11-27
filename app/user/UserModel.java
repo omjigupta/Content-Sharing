@@ -12,12 +12,13 @@ import org.mongodb.morphia.annotations.Transient;
 @Getter
 @Setter
 public class UserModel extends BaseModel {
-    private String name, password;
+    private String emailAddress, password;
 
     @Transient
     private String authToken;
 
-    public enum Fields {password, name}
+    public enum Fields {password, emailAddress}
+
 
     //public enum Fields {password, authToken, name}
 }

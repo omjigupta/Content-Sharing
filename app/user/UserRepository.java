@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserRepository {
 
-    UserModel getUserByName(final String name);
+    UserModel getUserByEmail(final String email);
 
     List<UserModel> getAllUsers();
 
