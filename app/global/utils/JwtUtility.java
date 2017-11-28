@@ -9,11 +9,13 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Map;
-import java.util.UUID;
 
 final public class JwtUtility {
 
-    private static String apiKey = UUID.randomUUID().toString();
+    public JwtUtility() {
+    }
+
+    private static String apiKey = "secret";
 
     public static String createToken(String id, Map<String,Object> claim) {
 

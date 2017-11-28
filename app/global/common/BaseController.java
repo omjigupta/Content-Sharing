@@ -5,22 +5,16 @@ import play.data.validation.ValidationError;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-import session.SessionService;
 
 import javax.inject.Inject;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.BiFunction;
 
-import static global.utils.JwtUtility.parseToken;
 
 public class BaseController extends Controller {
 
     @Inject
     protected FormFactory formFactory;
-
-    @Inject
-    public SessionService sessionService;
 
     public Result index() {
         return ok("application is running");
@@ -65,12 +59,4 @@ public class BaseController extends Controller {
         return validationErrors.stream().map(error -> validationFormat.apply(error.key(), error.message())).reduce((err1, err2) -> err1 + "," + err2).orElse("NA");
     }
 
-    public boolean isSessionValid() {
-
-        Optional<String> optionalToken = request().getHeaders().get("x-session-token");
-
-        System.out.println("is session : " + optionalToken);
-        return optionalToken.isPresent() ? sessionService.isSessionExists(parseToken(optionalToken.get()).getId()) : false;
-
-        }
 }
