@@ -8,8 +8,8 @@ import javax.inject.Singleton;
 import java.util.List;
 import java.util.Optional;
 
-import static global.utils.Helper.compare;
-import static global.utils.Helper.hash;
+import static global.utils.HashUtility.compare;
+import static global.utils.HashUtility.hash;
 
 @Singleton
 public class UserService {

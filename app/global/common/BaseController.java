@@ -1,7 +1,5 @@
 package global.common;
 
-import global.utils.JwtUtility;
-import io.jsonwebtoken.Claims;
 import play.data.FormFactory;
 import play.data.validation.ValidationError;
 import play.libs.Json;
@@ -13,6 +11,8 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.BiFunction;
+
+import static global.utils.JwtUtility.parseToken;
 
 public class BaseController extends Controller {
 
@@ -70,7 +70,7 @@ public class BaseController extends Controller {
         Optional<String> optionalToken = request().getHeaders().get("x-session-token");
 
         System.out.println("is session : " + optionalToken);
-        return optionalToken.isPresent() ? sessionService.isSessionExists(JwtUtility.parseJWT(optionalToken.get()).getId()) : false;
+        return optionalToken.isPresent() ? sessionService.isSessionExists(parseToken(optionalToken.get()).getId()) : false;
 
         }
 }

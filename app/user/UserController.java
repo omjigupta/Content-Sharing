@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import static global.utils.JwtUtility.createToken;
+
 @Singleton
 public final class UserController extends BaseController {
 
@@ -61,7 +63,7 @@ public final class UserController extends BaseController {
 
             Map<String, Object> claim = new HashMap<String,Object>();
             claim.put(session, userModel.getId());
-            String jwtToken = JwtUtility.createJWT(session, userModel.getEmailAddress(),"Archon",claim);
+            String jwtToken = createToken(session, userModel.getEmailAddress(),"Archon",claim);
 
             return status ? success("successfully login", ImmutableMap.of("x-session-token",jwtToken)) : failure("failed to login");
         }else{

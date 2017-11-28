@@ -9,12 +9,13 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Map;
+import java.util.UUID;
 
-public class JwtUtility {
+final public class JwtUtility {
 
-    private static String apiKey = "secret";
+    private static String apiKey = UUID.randomUUID().toString();
 
-    public static String createJWT(String id, String issuer, String subject, Map<String,Object> claim) {
+    public static String createToken(String id, String issuer, String subject, Map<String,Object> claim) {
 
         byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey);
         Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
@@ -29,17 +30,17 @@ public class JwtUtility {
         return builder.compact();
     }
 
-    public static Claims parseJWT(String jwt) {
+    public static Claims parseToken(String jwt) {
 
-        Claims claims = Jwts.parser()
+        Claims parsedValue = Jwts.parser()
                 .setSigningKey(DatatypeConverter.parseBase64Binary(apiKey))
                 .parseClaimsJws(jwt).getBody();
 
-        System.out.println("ID: " + claims.getId());
-        System.out.println("Subject: " + claims.getSubject());
-        System.out.println("Issuer: " + claims.getIssuer());
+        System.out.println("ID: " + parsedValue.getId());
+        System.out.println("Subject: " + parsedValue.getSubject());
+        System.out.println("Issuer: " + parsedValue.getIssuer());
 
-        return claims;
+        return parsedValue;
     }
 
 }

@@ -1,15 +1,12 @@
 package session;
 
 import global.exceptions.CustomException;
-import global.utils.Helper;
-import global.utils.JwtUtility;
+import global.utils.HashUtility;
 import org.bson.types.ObjectId;
 import play.Logger;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 @Singleton
@@ -45,7 +42,7 @@ public class SessionService {
 
             sessionModel.setUserID(userId);
             sessionModel.setAuthToken(session);
-            sessionModel.setCreatedAt(Helper.currentEpoch());
+            sessionModel.setCreatedAt(HashUtility.currentEpoch());
 
             repository.createSession(sessionModel);
             return true;
