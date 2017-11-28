@@ -19,9 +19,13 @@ public class SecuredAction extends Action.Simple {
     @Override
     public CompletionStage<Result> call(Http.Context ctx) {
         Optional<String> token = ctx.request().getHeaders().get("x-session-token");
+
+        if (token.isPresent()) {
             sessionService.isSessionExists(parseToken(token.get()).getId());
             return delegate.call(ctx);
-
+        } else {
+            return (CompletionStage<Result>) unauthorized();
+        }
     }
 
 }
