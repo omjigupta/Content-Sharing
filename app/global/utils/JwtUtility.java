@@ -15,19 +15,22 @@ final public class JwtUtility {
 
     private static String apiKey = UUID.randomUUID().toString();
 
-    public static String createToken(String id, String issuer, String subject, Map<String,Object> claim) {
+    public static String createToken(String id, Map<String,Object> claim) {
 
-        byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey);
-        Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
+        if (apiKey !=  null) {
+            byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey);
+            Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
 
-        JwtBuilder builder = Jwts.builder()
-                .setId(id)
-                .setSubject(subject)
-                .setIssuer(issuer)
-                .addClaims(claim)
-                .signWith(SignatureAlgorithm.HS256, signingKey);
+            JwtBuilder builder = Jwts.builder()
+                    .setId(id)
+                    .addClaims(claim)
+                    .signWith(SignatureAlgorithm.HS256, signingKey);
 
-        return builder.compact();
+            return builder.compact();
+        }
+
+        return null;
+
     }
 
     public static Claims parseToken(String jwt) {
@@ -37,8 +40,6 @@ final public class JwtUtility {
                 .parseClaimsJws(jwt).getBody();
 
         System.out.println("ID: " + parsedValue.getId());
-        System.out.println("Subject: " + parsedValue.getSubject());
-        System.out.println("Issuer: " + parsedValue.getIssuer());
 
         return parsedValue;
     }

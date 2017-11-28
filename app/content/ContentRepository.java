@@ -14,7 +14,7 @@ public interface ContentRepository {
 
     List<ContentModel> getContentByUser(final ObjectId userId);
 
-    void  updateContent(ContentModel content);
+    void updateContent(ContentModel content);
 
     boolean deleteContent(final ObjectId contentId);
 

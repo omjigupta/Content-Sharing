@@ -63,9 +63,10 @@ public final class UserController extends BaseController {
 
             Map<String, Object> claim = new HashMap<String,Object>();
             claim.put(session, userModel.getId());
-            String jwtToken = createToken(session, userModel.getEmailAddress(),"Archon",claim);
 
-            return status ? success("successfully login", ImmutableMap.of("x-session-token",jwtToken)) : failure("failed to login");
+            final String jwtToken = createToken(session, claim);
+
+            return status && jwtToken != null ? success("successfully login", ImmutableMap.of("x-session-token",jwtToken)) : failure("failed to login");
         }else{
             return failure("Invalid Login credentials");
         }
@@ -75,7 +76,7 @@ public final class UserController extends BaseController {
     public Result logoutUser(String sessionToken) {
 
         boolean sModel = this.sessionService.deleteSession(sessionToken);
-        return  sModel ? success("You've been successfully logged out") : failure("not logout");
+        return  sModel ? success("You've been successfully logged out") : failure("error in logout");
     }
 
     @BodyParser.Of(BodyParser.Json.class)

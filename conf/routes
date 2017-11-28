@@ -8,6 +8,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /                           global.common.BaseController.index()
 ->      /users                      users.Routes
 ->      /content                    content.Routes
+->      /member-content             memberContent.Routes
 
 
 
