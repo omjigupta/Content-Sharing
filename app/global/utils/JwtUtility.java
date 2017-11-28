@@ -9,25 +9,30 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Map;
-import java.util.UUID;
 
 final public class JwtUtility {
 
-    private static String apiKey = UUID.randomUUID().toString();
+    public JwtUtility() {
+    }
 
-    public static String createToken(String id, String issuer, String subject, Map<String,Object> claim) {
+    private static String apiKey = "secret";
 
-        byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey);
-        Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
+    public static String createToken(String id, Map<String,Object> claim) {
 
-        JwtBuilder builder = Jwts.builder()
-                .setId(id)
-                .setSubject(subject)
-                .setIssuer(issuer)
-                .addClaims(claim)
-                .signWith(SignatureAlgorithm.HS256, signingKey);
+        if (apiKey !=  null) {
+            byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(apiKey);
+            Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
 
-        return builder.compact();
+            JwtBuilder builder = Jwts.builder()
+                    .setId(id)
+                    .addClaims(claim)
+                    .signWith(SignatureAlgorithm.HS256, signingKey);
+
+            return builder.compact();
+        }
+
+        return null;
+
     }
 
     public static Claims parseToken(String jwt) {
@@ -37,8 +42,6 @@ final public class JwtUtility {
                 .parseClaimsJws(jwt).getBody();
 
         System.out.println("ID: " + parsedValue.getId());
-        System.out.println("Subject: " + parsedValue.getSubject());
-        System.out.println("Issuer: " + parsedValue.getIssuer());
 
         return parsedValue;
     }

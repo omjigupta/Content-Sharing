@@ -1,0 +1,4 @@
+
+POST    /                      member_content.MemberContentController.assignContentToMember()
+PUT     /:memberContentId              member_content.MemberContentController.updateMemberContent(memberContentId : String)
+DELETE  /:memberContentId              member_content.MemberContentController.deleteMemberContent(memberContentId : String)
