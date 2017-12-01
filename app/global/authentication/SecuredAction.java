@@ -7,6 +7,7 @@ import session.SessionService;
 
 import javax.inject.Inject;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 import static global.utils.JwtUtility.parseToken;
@@ -24,7 +25,7 @@ public class SecuredAction extends Action.Simple {
             sessionService.isSessionExists(parseToken(token.get()).getId());
             return delegate.call(ctx);
         } else {
-            return (CompletionStage<Result>) unauthorized();
+            return CompletableFuture.completedFuture(unauthorized());
         }
     }
 
